@@ -1,8 +1,13 @@
+from random import choice
+
 class WordFinder:
     """Word Finder: finds random words from a dictionary.
 
     >>> wf = WordFinder("words.txt")
-    3 words read
+    235886 words read
+
+    >>> wf.random()
+    ...
     """
 
     def __init__(self,path_to_file):
@@ -23,15 +28,19 @@ class WordFinder:
         Increments total_num_words'''
         for line in self.filepath:
             self.words_found.append(line[:-2])
-            self.total_num_of_words += 1
+            self.total_num_words += 1
 
 
     def total_num_of_words(self):
         '''Returns total_num_words instance attribute'''
-        return f'{self.total_num_of_words} words read'
+        #return f'{self.total_num_of_words} words read'
+        print(f'{self.total_num_words} words read')
+
 
     def random(self):
         '''Return a random word within the file'''
+
+        return choice(self.words_found)
 
 
 
