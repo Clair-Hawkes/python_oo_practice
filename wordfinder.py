@@ -39,7 +39,6 @@ class WordFinder:
 
     def random(self):
         '''Return a random word within the file'''
-
         return choice(self.words_found)
 
 
